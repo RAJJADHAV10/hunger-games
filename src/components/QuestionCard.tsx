@@ -236,7 +236,7 @@ export default function QuestionCard({
   const targetUrl = `/questions?${getQuestionSearchParams(filterState)}`;
 
   const handleTitleSave = (newTitle: string) => {
-    localFavorites.addQuestion(filterState, imageSrc, newTitle);
+    localFavorites.addQuestion(filterState, imageSrc || "", newTitle);
   };
 
   return (
@@ -249,7 +249,7 @@ export default function QuestionCard({
             onSave={handleTitleSave}
           />
         </CardContent>
-        <CardActionArea component={Link} href={targetUrl}>
+        <CardActionArea component="a" href={targetUrl}>
           <CardMedia
             component="img"
             height="200"

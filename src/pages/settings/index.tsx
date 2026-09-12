@@ -34,7 +34,9 @@ export default function Settings() {
   const languageDisplay = new Intl.DisplayNames([i18n.language], {
     type: "language",
   });
-  const supportedLanguageCodes = languageCodes.filter((code) => code in messages);
+  const supportedLanguageCodes = languageCodes.filter(
+    (code) => code in messages,
+  );
   const { devMode, setDevMode, visiblePages, setVisiblePages } =
     React.useContext(DevModeContext);
 
@@ -126,8 +128,9 @@ export default function Settings() {
               checked={visiblePages[pageUrl] ?? false}
               onChange={handleVisiblePagesChange(pageUrl)}
               control={<Switch />}
-              label={`${t("settings.dev_page_toggle", { name: pageName })}${isExperimental ? " (🚧 experimental)" : ""
-                }`}
+              label={`${t("settings.dev_page_toggle", { name: pageName })}${
+                isExperimental ? " (🚧 experimental)" : ""
+              }`}
               labelPlacement="end"
               sx={{
                 marginInlineStart: `${2 * (pageUrl.split("/").length - 1)}px`,

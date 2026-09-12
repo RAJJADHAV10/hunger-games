@@ -1,5 +1,4 @@
 import * as React from "react";
-import { Link } from "react-router";
 
 import Typography from "@mui/material/Typography";
 import Card from "@mui/material/Card";
@@ -50,11 +49,7 @@ const OpportunityCard = (props: OpportunityCardProps) => {
         }}
         variant="outlined"
       >
-        <CardActionArea
-          component={Link as React.ElementType}
-          to={targetUrl}
-          sx={{ height: "100%" }}
-        >
+        <CardActionArea component="a" href={targetUrl} sx={{ height: "100%" }}>
           <CardContent>
             <Typography variant="h6">{name}</Typography>
             <Typography sx={{ textAlign: "end", mt: 3, fontSize: "1.5rem" }}>
