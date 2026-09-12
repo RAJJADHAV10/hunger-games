@@ -26,7 +26,6 @@ import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import DevModeContext from "../contexts/devMode";
 import LoginContext from "../contexts/login";
 import logo from "../assets/logo.png";
-import { Link } from "react-router";
 
 import { useTranslation } from "react-i18next";
 import WelcomeTour from "./welcome/Welcome";
